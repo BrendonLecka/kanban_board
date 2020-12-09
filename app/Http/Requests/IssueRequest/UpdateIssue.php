@@ -28,13 +28,13 @@ class UpdateIssue extends FormRequest
     {
 
         return [
-            'title' => ['sometimes', 'required', 'unique:issues', 'max:100', 'alpha_dash'],
-            'description' => ['sometimes', 'required', 'max:255'],
+            'title' => ['sometimes', 'unique:issues', 'max:100'],
+            'description' => ['sometimes', 'max:255'],
             'assigned_to' => ['sometimes', 'nullable', 'exists:users,id'],
             'due_date' => ['sometimes', 'required', 'date', 'after:today'],
-            'order' => ['sometimes', 'required', 'numeric'],
-            'priority' => ['sometimes', 'required', Rule::in(['low', 'medium', 'high'])],
-            'state_id' => ['sometimes', 'required', 'exists:states,id'],
+            'position' => ['sometimes', 'numeric'],
+            'priority' => ['sometimes', Rule::in(['low', 'medium', 'high'])],
+            'state_id' => ['sometimes', 'exists:states,id'],
         ];
     }
 

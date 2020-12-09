@@ -20,7 +20,7 @@ class CreateIssuesTable extends Migration
             $table->foreignId('created_by')->nullable();
             $table->foreignId('assigned_to')->nullable();
             $table->dateTime('due_date');
-            $table->smallInteger('order')->default(0);
+            $table->smallInteger('position')->default(0);
             $table->enum('priority', ['low', 'medium', 'high']);
             $table->foreignId('state_id');
             $table->timestamps();

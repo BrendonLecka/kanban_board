@@ -32,7 +32,7 @@ class StoreIssue extends FormRequest
             'created_by' => ['required', 'exists:users,id'],
             'assigned_to' => ['nullable', 'exists:users,id'],
             'due_date' => ['required', 'date', 'after:today'],
-            'order' => ['required', 'numeric'],
+            'position' => ['sometimes', 'numeric'],
             'priority' => ['required', Rule::in(['low', 'medium', 'high'])],
             'state_id' => ['required', 'exists:states,id'],
         ];

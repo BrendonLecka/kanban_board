@@ -38,7 +38,7 @@ class BoardController extends Controller
     {
         $board->update($request->validated());
 
-        return response()->json($board, Response::HTTP_OK);
+        return response()->json(['board' => $board], Response::HTTP_OK);
     }
 
     public function destroy(Board $board): JsonResponse

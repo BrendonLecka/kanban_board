@@ -39,7 +39,7 @@ class StateController extends Controller
     {
         $state->update($request->validated());
 
-        return response()->json($state, Response::HTTP_OK);
+        return response()->json(['state' => $state], Response::HTTP_OK);
     }
 
     public function destroy(State $state): JsonResponse

@@ -13,7 +13,7 @@ class StateResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
-            'order' => $this->order,
+            'position' => $this->position,
             'board_id' => $this->board_id,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,

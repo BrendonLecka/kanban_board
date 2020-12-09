@@ -26,8 +26,8 @@ class StoreState extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required', 'unique:states', 'max:100', 'alpha_dash'],
-            'order' => ['required', 'integer'],
+            'title' => ['required', 'unique:states', 'max:100'],
+            'position' => ['sometimes', 'integer'],
             'board_id' => ['required', 'exists:boards,id'],
         ];
     }

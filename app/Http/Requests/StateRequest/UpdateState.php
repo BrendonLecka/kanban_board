@@ -26,8 +26,8 @@ class UpdateState extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['sometimes', 'required', 'unique:states', 'max:100', 'alpha_dash'],
-            'order' => ['sometimes', 'required', 'integer'],
+            'title' => ['sometimes', 'required', 'unique:states', 'max:100'],
+            'position' => ['sometimes', 'integer'],
         ];
     }
 
